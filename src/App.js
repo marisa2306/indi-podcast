@@ -23,7 +23,6 @@ function App () {
         <Route path="/" element={<Home />} />
         <Route path="/podcast/:podcastId" element={<PodcastDetails />} />
         <Route path="/podcast/:podcastId/episode/:episodeId" element={<EpisodeDetails />} />
-
       </Routes>
     </div>
   )
