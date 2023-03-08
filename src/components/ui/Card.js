@@ -9,7 +9,6 @@ export const Card = styled.article`
     margin-top: 60px;
     padding: 1em;
 `
-
 export const ImgFrame = styled.div`
     width: 120px;
     height: 120px;
@@ -18,7 +17,6 @@ export const ImgFrame = styled.div`
     margin: -60px auto 0;
    
 `
-
 export const Img = styled.img`
     width: 100%;
     height: 100%;
