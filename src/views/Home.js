@@ -1,9 +1,9 @@
-import PodcastList from '../components/PodcastList'
+import PodcastsList from '../components/podcasts-list/PodcastsList'
 
 const Home = () => {
   return (
     <>
-      <PodcastList />
+      <PodcastsList />
     </>
   )
 }
