@@ -22,6 +22,7 @@ const PodcastsList = () => {
                       key={podcast.id.attributes['im:id']}
                       name={podcast['im:name']?.label}
                       image={podcast['im:image'][1]?.label}
+                      author={podcast['im:artist']?.label}
                     />
                   )
                 })
