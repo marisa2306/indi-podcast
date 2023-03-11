@@ -1,7 +1,7 @@
 import InputGroup from 'react-bootstrap/InputGroup'
 import Form from 'react-bootstrap/Form'
 import Badge from 'react-bootstrap/Badge'
-import { ListHeader, SearchBarWrapper } from '../../ui/ListHeader'
+import { ListHeader, SearchBarWrapper } from '../ui/ListHeader'
 
 const PodcastsListHeader = ({ handleInputSearch, podcasts }) => {
   return (

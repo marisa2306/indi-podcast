@@ -24,8 +24,9 @@ function App () {
       </header>
       <Routes>
         <Route path={ROUTES.HOME} element={<Home />} />
-        <Route path={ROUTES.DETAIL} element={<PodcastDetails />} />
-        <Route path={ROUTES.EPISODE} element={<EpisodeDetails />} />
+        <Route path={ROUTES.DETAIL} element={<PodcastDetails />}>
+          <Route path={ROUTES.EPISODE} element={<EpisodeDetails />} />
+        </Route>
       </Routes>
     </div>
   )

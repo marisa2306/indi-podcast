@@ -2,11 +2,14 @@ import Row from 'react-bootstrap/Row'
 import EpisodesList from './EpisodesList'
 import PodcastDetailsCard from './PodcastDetailsCard'
 
-const DetailsColumns = ({ episodes }) => {
+const DetailsColumns = ({ episodes, podcastId }) => {
   return (
     <Row>
       <PodcastDetailsCard/>
-      <EpisodesList episodes={episodes}/>
+      <EpisodesList
+        podcastId={podcastId}
+        episodes={episodes}
+      />
     </Row>
 
   )

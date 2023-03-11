@@ -1,4 +1,4 @@
-import { Card, Img, Title, Author, ImgFrame } from '../../ui/Card'
+import { Card, Img, Title, Author, ImgFrame } from '../ui/Card'
 import { Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
