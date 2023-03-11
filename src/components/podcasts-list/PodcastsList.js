@@ -5,13 +5,13 @@ import Spinner from 'react-bootstrap/Spinner'
 import PodcastCard from './podcast-card/PodcastCard'
 import PodcastsListHeader from './podcasts-header.js/PodcastsListHeader'
 import useGetPodcastsList from '../hooks/useGetPodcastsList'
-import useSearch from '../hooks/useSearch'
+import useFilterPodcasts from '../hooks/useFilterPodcasts'
 
 const PodcastsList = () => {
   const [query, setQuery] = useState('')
 
   const { podcasts, isLoading } = useGetPodcastsList()
-  const { filteredPodcasts } = useSearch(podcasts, query)
+  const { filteredPodcasts } = useFilterPodcasts(podcasts, query)
 
   const handleInputSearch = (e) => {
     setQuery(e.target.value)

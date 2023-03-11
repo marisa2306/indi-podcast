@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const useSearch = (podcasts, query) => {
+const useFilterPodcasts = (podcasts, query) => {
   const [filteredPodcasts, setFilteredPodcasts] = useState([])
 
   useEffect(() => {
@@ -27,4 +27,4 @@ const useSearch = (podcasts, query) => {
   }
 }
 
-export default useSearch
+export default useFilterPodcasts

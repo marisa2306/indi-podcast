@@ -7,7 +7,7 @@ const PodcastsListHeader = ({ handleInputSearch, podcasts }) => {
   return (
     <ListHeader>
       <SearchBarWrapper>
-        <Badge bg="primary">
+        <Badge bg="primary" style={{ marginRight: '1em' }}>
         {podcasts?.length}
         </Badge>
         <InputGroup>
