@@ -4,6 +4,9 @@ import Badge from 'react-bootstrap/Badge'
 import { ListHeader, SearchBarWrapper } from '../../ui/ListHeader'
 
 const PodcastsListHeader = ({ podcasts }) => {
+  const handleInputSearch = () => {
+
+  }
   return (
     <ListHeader>
       <SearchBarWrapper>
@@ -12,7 +15,8 @@ const PodcastsListHeader = ({ podcasts }) => {
         </Badge>
         <InputGroup>
         <Form.Control
-            placeholder="Filter products..."
+          onChange={handleInputSearch}
+          placeholder="Filter products..."
         />
         </InputGroup>
       </SearchBarWrapper>

@@ -1,44 +1,39 @@
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Spinner from 'react-bootstrap/Spinner'
-import PodcastCard from './podcast-card/PodcastCard'
-import PodcastsListHeader from './podcasts-header.js/PodcastsListHeader'
-import useGetPodcastsList from '../hooks/useGetPodcastsList'
+import PodcastCard from './podcast-details-card/PodcastDetailsCard'
+import useGetPodcastDetails from '../hooks/useGetPodcastDetails'
 
-const PodcastsList = () => {
-  const { podcasts, isLoading } = useGetPodcastsList()
+const PodcastDetails = () => {
+  const { podcast, isLoading } = useGetPodcastDetails()
 
   return (
     <Container>
-      <PodcastsListHeader
-        podcasts={podcasts}
-      />
       <section>
         {isLoading
           ? <Spinner animation="border" role="status">
               <span className="visually-hidden">Loading...</span>
             </Spinner>
-          : <ul>
-              <Row>
-                {
-                  podcasts?.map(podcast => {
-                    return (
-                      <PodcastCard
+          : <Row>
+                <Col md={{ span: 4 }} lg={{ span: 3, offset: 1 }}>
+                    <PodcastDetailsCard
                         key={podcast?.id?.attributes['im:id']}
                         name={podcast['im:name']?.label}
                         image={podcast['im:image'][1]?.label}
                         author={podcast['im:artist']?.label}
                         podcastId={podcast?.id?.attributes['im:id']}
-                      />
-                    )
-                  })
-                }
+                    />
+                </Col>
+                <Col md={{ span: 8 }} lg={{ span: 8 }}>
+
+                </Col>
+
               </Row>
-            </ul>
+
         }
       </section>
       </Container>
   )
 }
 
-export default PodcastsList
+export default PodcastDetails

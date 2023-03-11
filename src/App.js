@@ -5,6 +5,7 @@ import { Route, Routes, Link } from 'react-router-dom'
 import Home from './views/Home'
 import PodcastDetails from './views/PodcastDetails'
 import EpisodeDetails from './views/EpisodeDetails'
+import ROUTES from './config/podcast-routes'
 
 function App () {
   return (
@@ -20,9 +21,9 @@ function App () {
         </nav>
       </header>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/podcast/:podcastId" element={<PodcastDetails />} />
-        <Route path="/podcast/:podcastId/episode/:episodeId" element={<EpisodeDetails />} />
+        <Route path={ROUTES.HOME} element={<Home />} />
+        <Route path={ROUTES.DETAIL} element={<PodcastDetails />} />
+        <Route path={ROUTES.EPISODE} element={<EpisodeDetails />} />
       </Routes>
     </div>
   )

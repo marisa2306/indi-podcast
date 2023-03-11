@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import URLS from '../../config/URLs'
 
-const useGetPodcastList = () => {
+const useGetPodcastsList = () => {
   const [podcasts, setPodcasts] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     axios
-      .get('https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json')
+      .get(`${URLS.GET_ALL_PODCASTS}`)
       .then((res) => {
         setPodcasts(res.data.feed.entry)
       })
-      .catch(e => {
-        console.log(e)
+      .catch(error => {
+        console.log(error)
       })
       .finally(() => {
         setIsLoading(false)
@@ -25,4 +26,4 @@ const useGetPodcastList = () => {
   }
 }
 
-export default useGetPodcastList
+export default useGetPodcastsList
