@@ -1,6 +1,26 @@
+import { useParams } from 'react-router'
+import Container from 'react-bootstrap/Container'
+import Spinner from 'react-bootstrap/Spinner'
+import DetailsColumns from '../components/podcast-details/DetailsColumns'
+import useGetPodcastEpisodes from '../components/hooks/useGetPodcastEpisodes'
+
 const PodcastDetails = () => {
+  const { podcastId } = useParams()
+  const { episodes, isLoading } = useGetPodcastEpisodes(podcastId)
+
   return (
-    <h1>Podcast Details</h1>
+    <Container>
+      <section>
+        {isLoading
+          ? <Spinner animation="border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+          : <DetailsColumns
+              episodes={episodes}
+            />
+        }
+      </section>
+    </Container>
   )
 }
 

@@ -6,8 +6,9 @@ export const Card = styled.article`
     border-radius: 6px;
     max-width: 350px;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 100px;
     padding: 1em;
+    height: 180px;
 `
 export const ImgFrame = styled.div`
     width: 120px;
@@ -30,6 +31,10 @@ export const Title = styled.h3`
     font-size: 1em;
     text-transform: uppercase;
     margin-top: 1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 `
 export const Author = styled.p`
     font-family: Helvetica,Arial,sans-serif;

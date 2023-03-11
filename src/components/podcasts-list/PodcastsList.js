@@ -36,9 +36,10 @@ const PodcastsList = () => {
                       <PodcastCard
                         key={podcast?.id?.attributes['im:id']}
                         name={podcast['im:name']?.label}
-                        image={podcast['im:image'][1]?.label}
+                        image={podcast['im:image'][2]?.label}
                         author={podcast['im:artist']?.label}
                         podcastId={podcast?.id?.attributes['im:id']}
+                        description={podcast?.summary?.label}
                       />
                     )
                   })

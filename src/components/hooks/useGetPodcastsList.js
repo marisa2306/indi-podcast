@@ -8,7 +8,7 @@ const useGetPodcastsList = () => {
 
   useEffect(() => {
     axios
-      .get(`${URLS.GET_ALL_PODCASTS}`)
+      .get(`${URLS.PROXY_URL}${URLS.GET_ALL_PODCASTS}`)
       .then((res) => {
         setPodcasts(res.data.feed.entry)
       })
