@@ -9,9 +9,9 @@ const useSearch = (podcasts, query) => {
         const q = query?.toLowerCase()
         const filtered = podcasts?.filter(
           podcast => {
-            const author = podcast['im:artist']?.label
-            const name = podcast['im:name']?.label
-            return author?.toLowerCase()?.includes(q) || name?.toLowerCase()?.includes(q)
+            const author = podcast['im:artist']?.label?.toLowerCase()?.includes(q)
+            const name = podcast['im:name']?.label?.toLowerCase()?.includes(q)
+            return author || name
           }
         )
         setFilteredPodcasts([...filtered])
