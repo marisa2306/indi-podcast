@@ -5,7 +5,7 @@ import { Route, Routes, Link } from 'react-router-dom'
 import Home from './views/Home'
 import PodcastDetails from './views/PodcastDetails'
 import EpisodeDetails from './views/EpisodeDetails'
-import ROUTES from './config/podcast-routes'
+import ROUTES from './config/podcasts.routes'
 
 function App () {
   return (

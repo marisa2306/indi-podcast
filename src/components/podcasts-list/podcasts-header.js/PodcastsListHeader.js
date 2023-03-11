@@ -3,10 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Badge from 'react-bootstrap/Badge'
 import { ListHeader, SearchBarWrapper } from '../../ui/ListHeader'
 
-const PodcastsListHeader = ({ podcasts }) => {
-  const handleInputSearch = () => {
-
-  }
+const PodcastsListHeader = ({ handleInputSearch, podcasts }) => {
   return (
     <ListHeader>
       <SearchBarWrapper>

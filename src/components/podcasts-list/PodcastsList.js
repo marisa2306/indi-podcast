@@ -1,17 +1,27 @@
+import { useState } from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Spinner from 'react-bootstrap/Spinner'
 import PodcastCard from './podcast-card/PodcastCard'
 import PodcastsListHeader from './podcasts-header.js/PodcastsListHeader'
 import useGetPodcastsList from '../hooks/useGetPodcastsList'
+import useSearch from '../hooks/useSearch'
 
 const PodcastsList = () => {
+  const [query, setQuery] = useState('')
+
   const { podcasts, isLoading } = useGetPodcastsList()
+  const { filteredPodcasts } = useSearch(podcasts, query)
+
+  const handleInputSearch = (e) => {
+    setQuery(e.target.value)
+  }
 
   return (
     <Container>
       <PodcastsListHeader
         podcasts={podcasts}
+        handleInputSearch={handleInputSearch}
       />
       <section>
         {isLoading
@@ -21,7 +31,7 @@ const PodcastsList = () => {
           : <ul>
               <Row>
                 {
-                  podcasts?.map(podcast => {
+                  filteredPodcasts?.map(podcast => {
                     return (
                       <PodcastCard
                         key={podcast?.id?.attributes['im:id']}
