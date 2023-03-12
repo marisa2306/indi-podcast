@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 CORS Anywhere has been used to enable cross-origin requests to anywhere.
 To temporarily unlock access to https://cors-anywhere.herokuapp.com/corsdemo, click on "Request temporary access to the demo server" button.
+
 ## Available Scripts
 
 In the project directory, you can run:
