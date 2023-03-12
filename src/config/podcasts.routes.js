@@ -1,7 +1,7 @@
 const ROUTES = {
   HOME: '/',
   DETAIL: '/podcast/:podcastId',
-  EPISODE: '/podcast/:podcastId/episode/:episodeId'
+  EPISODE: 'episode/:episodeId'
 }
 
 export default ROUTES

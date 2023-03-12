@@ -12,14 +12,14 @@ const EpisodesTable = ({ episodes, podcastId }) => {
             <th>Duration</th>
             </tr>
         </thead>
-        <tbody style={{ maxHeight: '120px', overflowY: 'scroll' }}>
+        <tbody>
             {episodes?.length > 0 &&
                 episodes.map(episode => {
                   return (
                     <tr key={episode?.trackId}>
-                        <Link to={`/podcast/${podcastId}/episode/${episode?.trackId}`}>
-                            <td>{episode?.trackName}</td>
-                        </Link>
+                      <td>
+                        <Link to={`episode/${episode?.trackId}`} title={episode?.trackName}>{episode?.trackName}</Link>
+                      </td>
                         <td>{Moment(episode?.releaseDate).format('DD/MM/YYYY')}</td>
                         <td>{new Date(episode?.trackTimeMillis * 1000).toISOString().substr(11, 8)}</td>
                     </tr>

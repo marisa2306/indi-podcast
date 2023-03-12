@@ -14,7 +14,7 @@ function App () {
         <nav>
           <ul>
             <li className="text-left">
-              <Link className="home-link" to={'/'}>
+              <Link className="home-link" to={'/'} title='Podcaster home page'>
                 <h1>Podcaster</h1>
               </Link>
             </li>

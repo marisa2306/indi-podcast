@@ -6,7 +6,7 @@ const PodcastCard = ({ name, image, author, podcastId, description }) => {
   return (
     <Col xs={{ span: 10, offset: 1 }} sm={{ span: 6, offset: 0 }} md={4} lg={3}>
       <li>
-        <Link className="card-link" to={`/podcast/${podcastId}`} state={{ name, image, author, podcastId, description }}>
+        <Link className="card-link" to={`/podcast/${podcastId}`} state={{ name, image, author, podcastId, description }} title={name}>
           <Card>
             <ImgFrame>
               <Img src={image} title={name} alt={`${name} image`}/>

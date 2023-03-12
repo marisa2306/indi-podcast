@@ -7,7 +7,7 @@ const PodcastDetailsCard = () => {
   const location = useLocation()
   return (
     <Col md={{ span: 4 }} lg={{ span: 3, offset: 1 }}>
-      <Link className="card-link" to={`/podcast/${location?.state?.podcastId}`}>
+      <Link className="card-link" to={`/podcast/${location?.state?.podcastId}`} title={location?.state?.name}>
         <DetailsCard>
           <div>
             <img className="img" src={location?.state?.image} title={location?.state?.name} alt={`${location?.state?.name} image`}/>
