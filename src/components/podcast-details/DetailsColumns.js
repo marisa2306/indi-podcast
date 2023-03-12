@@ -3,7 +3,7 @@ import Row from 'react-bootstrap/Row'
 import EpisodesList from './EpisodesList'
 import PodcastDetailsCard from './PodcastDetailsCard'
 
-const DetailsColumns = ({ episodes, podcastId }) => {
+const DetailsColumns = ({ episodes }) => {
   const location = useLocation()
   return (
     <Row>
@@ -11,8 +11,7 @@ const DetailsColumns = ({ episodes, podcastId }) => {
       {location?.pathname?.includes('episode')
         ? <Outlet/>
         : <EpisodesList
-          podcastId={podcastId}
-          episodes={episodes}
+            episodes={episodes}
         />
     }
     </Row>

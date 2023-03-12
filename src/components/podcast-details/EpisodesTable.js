@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import Table from 'react-bootstrap/Table'
 import Moment from 'moment'
 
-const EpisodesTable = ({ episodes, podcastId }) => {
+const EpisodesTable = ({ episodes }) => {
   return (
     <Table striped bordered hover>
         <thead>

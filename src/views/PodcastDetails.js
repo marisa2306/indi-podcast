@@ -16,7 +16,6 @@ const PodcastDetails = () => {
               <span className="visually-hidden">Loading...</span>
             </Spinner>
           : <DetailsColumns
-              podcastId={podcastId}
               episodes={episodes}
             />
         }

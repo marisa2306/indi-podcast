@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Spinner from 'react-bootstrap/Spinner'
@@ -6,16 +5,12 @@ import PodcastCard from './PodcastCard'
 import PodcastsListHeader from './PodcastsListHeader'
 import useGetPodcastsList from '../hooks/useGetPodcastsList'
 import useFilterPodcasts from '../hooks/useFilterPodcasts'
+import useQuery from '../hooks/useQuery'
 
 const PodcastsList = () => {
-  const [query, setQuery] = useState('')
-
+  const { query, handleInputSearch } = useQuery()
   const { podcasts, isLoading } = useGetPodcastsList()
   const { filteredPodcasts } = useFilterPodcasts(podcasts, query)
-
-  const handleInputSearch = (e) => {
-    setQuery(e.target.value)
-  }
 
   return (
     <Container>
@@ -48,7 +43,7 @@ const PodcastsList = () => {
             </ul>
         }
       </section>
-      </Container>
+    </Container>
   )
 }
 
