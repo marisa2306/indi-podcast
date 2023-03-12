@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
+import PodcastsContext from '../../context/PodcastsContext'
 import axios from 'axios'
 import URLS from '../../config/URLs'
 
 const useGetPodcastsList = () => {
-  const [podcasts, setPodcasts] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const { podcasts, setPodcasts } = useContext(PodcastsContext)
 
   useEffect(() => {
     axios
