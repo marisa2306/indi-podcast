@@ -6,7 +6,7 @@ import useGetPodcastEpisodes from '../components/hooks/useGetPodcastEpisodes'
 
 const PodcastDetails = () => {
   const { podcastId } = useParams()
-  const { episodes, isLoading } = useGetPodcastEpisodes(podcastId)
+  const { isLoading } = useGetPodcastEpisodes(podcastId)
 
   return (
     <Container>
@@ -17,7 +17,6 @@ const PodcastDetails = () => {
             </Spinner>
           : <DetailsColumns
               podcastId={podcastId}
-              episodes={episodes}
             />
         }
       </section>

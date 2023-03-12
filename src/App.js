@@ -7,18 +7,24 @@ import Home from './views/Home'
 import PodcastDetails from './views/PodcastDetails'
 import EpisodeDetails from './views/EpisodeDetails'
 import ROUTES from './config/podcasts.routes'
+import { EpisodesContextProvider } from './context/EpisodesContext'
+import { PodcastsContextProvider } from './context/PodcastsContext'
 
 function App () {
   return (
     <div className="App">
+      <PodcastsContextProvider>
       <HeaderApp />
-      <Routes>
-        <Route path={ROUTES.HOME} element={<Home />} />
-        <Route path={ROUTES.DETAIL} element={<PodcastDetails />}>
-          <Route path={ROUTES.EPISODE} element={<EpisodeDetails />} />
-        </Route>
-        <Route path='*' element={<h1>Page not found</h1>}></Route>
-      </Routes>
+      <EpisodesContextProvider>
+        <Routes>
+          <Route path={ROUTES.HOME} element={<Home />} />
+            <Route path={ROUTES.DETAIL} element={<PodcastDetails />}>
+              <Route path={ROUTES.EPISODE} element={<EpisodeDetails />} />
+            </Route>
+          <Route path='*' element={<h1>Page not found</h1>}></Route>
+        </Routes>
+      </EpisodesContextProvider>
+      </PodcastsContextProvider>
     </div>
   )
 }

@@ -1,3 +1,4 @@
+import { useContext } from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Spinner from 'react-bootstrap/Spinner'
@@ -6,10 +7,12 @@ import PodcastsListHeader from './PodcastsListHeader'
 import useGetPodcastsList from '../hooks/useGetPodcastsList'
 import useFilterPodcasts from '../hooks/useFilterPodcasts'
 import useQuery from '../hooks/useQuery'
+import PodcastsContext from '../../context/PodcastsContext'
 
 const PodcastsList = () => {
   const { query, handleInputSearch } = useQuery()
-  const { podcasts, isLoading } = useGetPodcastsList()
+  const { isLoading } = useGetPodcastsList()
+  const { podcasts } = useContext(PodcastsContext)
   const { filteredPodcasts } = useFilterPodcasts(podcasts, query)
 
   return (
@@ -34,7 +37,6 @@ const PodcastsList = () => {
                         image={podcast['im:image'][2]?.label}
                         author={podcast['im:artist']?.label}
                         podcastId={podcast?.id?.attributes['im:id']}
-                        description={podcast?.summary?.label}
                       />
                     )
                   })
