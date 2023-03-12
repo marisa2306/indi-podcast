@@ -6,7 +6,7 @@ const useGetPodcast = (location) => {
   useEffect(() => {
     setPodcast(location?.state)
     localStorage.setItem('podcast', podcast)
-  }, [location])
+  }, [])
 
   return {
     podcast
