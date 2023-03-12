@@ -1,23 +1,22 @@
 import Col from 'react-bootstrap/Col'
 import DetailsCard from '../ui/DetailsCard'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-const PodcastDetailsCard = () => {
-  const location = useLocation()
+const PodcastDetailsCard = ({ name, image, author, podcastId, description }) => {
   return (
     <Col md={{ span: 4 }} lg={{ span: 3, offset: 1 }}>
       <DetailsCard>
-        <Link className="card-link" to={`/podcast/${location?.state?.podcastId}`} title={location?.state?.name}>
+        <Link className="card-link" to={`/podcast/${podcastId}`} state={{ name, image, author, podcastId, description }} title={name}>
           <div>
-            <img className="img" src={location?.state?.image} title={location?.state?.name} alt={`${location?.state?.name} image`}/>
+            <img className="img" src={image} title={name} alt={`${name} image`}/>
           </div>
           <hr/>
-          <h3>{location?.state?.name}</h3>
-          <p>{`by: ${location?.state?.author}`}</p>
+          <h3>{name}</h3>
+          <p>{`by: ${author}`}</p>
         </Link>
         <hr/>
         <h4>Description:</h4>
-        <p>{location?.state?.description}</p>
+        <p>{description}</p>
       </DetailsCard>
     </Col>
   )

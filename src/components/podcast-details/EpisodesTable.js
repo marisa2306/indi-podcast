@@ -8,11 +8,11 @@ const EpisodesTable = ({ episodes }) => {
     <TableScroll>
       <Table striped bordered hover>
         <thead>
-            <tr>
-            <th>Title</th>
-            <th>Date</th>
-            <th>Duration</th>
-            </tr>
+          <tr>
+          <th>Title</th>
+          <th>Date</th>
+          <th>Duration</th>
+          </tr>
         </thead>
         <tbody>
           {episodes?.length > 0 &&
