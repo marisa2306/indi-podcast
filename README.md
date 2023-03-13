@@ -1,13 +1,31 @@
-# Getting Started with Create React App
+# Indi podcast app
+
+## URLs 
+
+Home page view: http://localhost:3000
+
+Podcast details view: http://localhost:3000/podcast/:podcastId 
+
+Podcast episode details view: http://localhost:3000/podcast/:podcastId/episode/:episodeId
+
+## DEMO
+
+https://user-images.githubusercontent.com/71128000/224683833-e37abd65-0d17-4591-83e1-1c028f6a07b2.mp4
+
+## Setup / Installation
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 CORS Anywhere has been used to enable cross-origin requests to anywhere.
 To temporarily unlock access to https://cors-anywhere.herokuapp.com/corsdemo, click on "Request temporary access to the demo server" button.
 
-## Available Scripts
+Download or clone the repository
 
 In the project directory, you can run:
+
+### `npm i`
+
+Install all the dependecies
 
 ### `npm start`
 
@@ -16,6 +34,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+## Available Scripts
 
 ### `npm test`
 
